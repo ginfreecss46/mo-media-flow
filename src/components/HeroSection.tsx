@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroMovie1 from "@/assets/hero-movie-1.jpg";
 import heroSeries1 from "@/assets/hero-series-1.jpg";
+import hollywoodAction from "@/assets/hollywood-action.jpg";
+import koreanDrama from "@/assets/korean-drama.jpg";
 
 const heroContent = [
   {
@@ -18,6 +20,26 @@ const heroContent = [
   },
   {
     id: 2,
+    title: "Speed Impact",
+    description: "Un blockbuster d'action explosif avec des cascades spectaculaires et des effets spéciaux époustouflants qui redéfiniront le genre de l'action moderne.",
+    image: hollywoodAction,
+    genre: "Action Hollywood",
+    year: "2024",
+    duration: "2h 30min",
+    isNew: true
+  },
+  {
+    id: 3,
+    title: "Seoul Hearts",
+    description: "Un K-drama romantique captivant qui explore les relations modernes dans la Corée contemporaine, mêlant émotion, famille et tradition.",
+    image: koreanDrama,
+    genre: "K-Drama Romance",
+    year: "2024", 
+    duration: "16 épisodes",
+    isNew: true
+  },
+  {
+    id: 4,
     title: "Racines Familiales",
     description: "Une saga familiale touchante qui retrace trois générations d'une famille africaine, leurs défis, leurs triomphes et l'importance des liens qui nous unissent.",
     image: heroSeries1,
