@@ -6,11 +6,15 @@ import BottomNav from "@/components/BottomNav";
 import MobileMenu from "@/components/MobileMenu";
 import moviePoster1 from "@/assets/movie-poster-1.jpg";
 import moviePoster2 from "@/assets/movie-poster-2.jpg";
+import hollywoodAction from "@/assets/hollywood-action.jpg";
+import bollywoodRomance from "@/assets/bollywood-romance.jpg";
+import koreanDrama from "@/assets/korean-drama.jpg";
+import europeanThriller from "@/assets/european-thriller.jpg";
 
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Mock data for different content categories
+  // Mock data for international content categories
   const trendingContent = [
     {
       id: 1,
@@ -18,76 +22,131 @@ const Index = () => {
       image: moviePoster1,
       duration: "1h 45min",
       year: "2024",
-      genre: "Action",
+      genre: "Action Africain",
       isNew: true,
       description: "Une action palpitante dans les rues de Kinshasa"
     },
     {
       id: 2,
+      title: "Speed Chase",
+      image: hollywoodAction,
+      duration: "2h 30min",
+      year: "2024",
+      genre: "Action Hollywood",
+      isNew: true,
+      description: "Un blockbuster d'action explosif"
+    },
+    {
+      id: 3,
+      title: "Amour Éternel",
+      image: bollywoodRomance,
+      duration: "2h 45min",
+      year: "2024",
+      genre: "Romance Bollywood",
+      isNew: false,
+      description: "Une romance colorée et musicale"
+    },
+    {
+      id: 4,
+      title: "Seoul Dreams",
+      image: koreanDrama,
+      duration: "16 épisodes",
+      year: "2024",
+      genre: "K-Drama",
+      isNew: true,
+      description: "Un drama coréen captivant"
+    },
+    {
+      id: 5,
+      title: "Mystère Parisien",
+      image: europeanThriller,
+      duration: "1h 55min",
+      year: "2024",
+      genre: "Thriller Européen",
+      isNew: false,
+      description: "Un thriller sophistiqué"
+    },
+    {
+      id: 6,
       title: "Amour Traditionnel",
       image: moviePoster2,
       duration: "2h 10min",
       year: "2024",
-      genre: "Romance",
-      isNew: false,
+      genre: "Romance Africain",
+      isNew: true,
       description: "Une histoire d'amour authentique"
-    },
+    }
+  ];
+
+  const hollywoodMovies = [
     {
-      id: 3,
-      title: "Héritages",
-      image: moviePoster1,
-      duration: "1h 30min",
-      year: "2023",
-      genre: "Drame",
-      isNew: false
-    },
-    {
-      id: 4,
-      title: "Rythmes d'Afrique",
-      image: moviePoster2,
-      duration: "1h 50min",
+      id: 7,
+      title: "Explosion Finale",
+      image: hollywoodAction,
+      duration: "2h 15min",
       year: "2024",
-      genre: "Musical",
+      genre: "Action",
       isNew: true
     },
     {
-      id: 5,
-      title: "Légendes Ancestrales",
-      image: moviePoster1,
-      duration: "2h 20min",
-      year: "2023",
-      genre: "Fantastique",
+      id: 8,
+      title: "Mystère de Londres",
+      image: europeanThriller,
+      duration: "1h 50min",
+      year: "2024",
+      genre: "Thriller",
       isNew: false
     },
     {
-      id: 6,
-      title: "Nouvelle Génération",
-      image: moviePoster2,
-      duration: "1h 25min",
+      id: 9,
+      title: "Romance des Étoiles",
+      image: bollywoodRomance,
+      duration: "2h 30min",
+      year: "2023",
+      genre: "Romance",
+      isNew: false
+    },
+    {
+      id: 10,
+      title: "Cœur de Séoul",
+      image: koreanDrama,
+      duration: "12 épisodes",
       year: "2024",
-      genre: "Comédie",
+      genre: "Drama",
       isNew: true
     }
   ];
 
   const africanMovies = [
-    ...trendingContent.slice(0, 4),
+    ...trendingContent.filter(item => item.genre.includes('Africain')),
     {
-      id: 7,
+      id: 11,
       title: "Contes de Brousse",
       image: moviePoster1,
       duration: "1h 55min",
       year: "2023",
       genre: "Aventure",
       isNew: false
+    }
+  ];
+
+  const asianContent = [
+    {
+      id: 12,
+      title: "Dragon des Montagnes",
+      image: koreanDrama,
+      duration: "20 épisodes",
+      year: "2024",
+      genre: "K-Drama",
+      isNew: true
     },
     {
-      id: 8,
-      title: "Modernité Africaine",
-      image: moviePoster2,
-      duration: "1h 40min",
+      id: 13,
+      title: "Rêves de Mumbai",
+      image: bollywoodRomance,
+      duration: "2h 40min",
       year: "2024",
-      genre: "Drame",
+      genre: "Bollywood",
       isNew: true
     }
   ];
@@ -113,7 +172,7 @@ const Index = () => {
         {/* Content Sections */}
         <div className="space-y-8 pb-20 md:pb-8">
           <ContentGrid 
-            title="Tendances actuelles" 
+            title="Tendances mondiales" 
             items={trendingContent}
             size="medium"
           />
@@ -125,8 +184,20 @@ const Index = () => {
           />
           
           <ContentGrid 
+            title="Hollywood & International" 
+            items={hollywoodMovies}
+            size="medium"
+          />
+          
+          <ContentGrid 
             title="Cinéma africain" 
             items={africanMovies}
+            size="medium"
+          />
+          
+          <ContentGrid 
+            title="Contenus asiatiques" 
+            items={asianContent}
             size="medium"
           />
           

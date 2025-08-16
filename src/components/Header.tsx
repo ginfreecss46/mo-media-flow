@@ -37,6 +37,9 @@ const Header = ({ onMenuToggle }: HeaderProps) => {
             Séries
           </Button>
           <Button variant="ghost" className="text-foreground/80 hover:text-foreground">
+            International
+          </Button>
+          <Button variant="ghost" className="text-foreground/80 hover:text-foreground">
             Live
           </Button>
         </nav>
